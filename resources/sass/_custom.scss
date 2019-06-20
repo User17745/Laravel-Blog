@@ -1,0 +1,83 @@
+html, body {
+    background-color: #fff;
+    color: #636b6f;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 200;
+    margin: 0;
+}
+
+.custom-height {
+    height: 85vh;
+}
+
+.flex-center {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.position-ref {
+    position: relative;
+}
+
+.top-right {
+    position: absolute;
+    right: 10px;
+    top: 18px;
+}
+
+.content {
+    text-align: center;
+}
+
+.title {
+    font-size: 84px;
+}
+
+.links > a {
+    color: #636b6f;
+    padding: 0 25px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.m-b-md {
+    margin-bottom: 30px;
+}
+
+.navbar{
+    background: linear-gradient(90deg, #e91e63, #ffcc80);
+}
+
+.navbar-light .navbar-nav .nav-link{
+    color: rgba(255,255,255,.8);
+    padding: 0 25px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+}
+.navbar-light .navbar-nav .show > .nav-link, .navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .nav-link.active{
+    color: rgba(255,255,255,1);
+}
+
+@media (max-width: 992px){
+    .navbar-light .navbar-nav .nav-link{
+        color: rgba(255,255,255,.8);
+        padding: 10px 25px;
+    }        
+}
+
+.page-item.active .page-link{
+    background-color: #ffcc80;
+    border-color: #ffcc80;
+}
+.page-link {
+    color: #ffcc80;
+}
+.page-link:focus{
+    box-shadow: 0 0 0 0.2rem #ffcc8055;
+}
