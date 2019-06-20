@@ -19,6 +19,7 @@
             border-radius: 25px;
             margin-top: 2em;
             ">
+            @include('inc.messages')
             <div class="flex-center position-ref custom-height">
                 <div class="content">
                     @yield('content')
@@ -26,6 +27,12 @@
             </div>
         </div>
         
-        @include('inc.navbar')    
+        @include('inc.navbar')
+
+        <!-- CKEditor Initiator Script -->
+        <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
+        <script>
+            CKEDITOR.replace( 'article-ckeditor' );
+        </script>    
     </body>
 </html>

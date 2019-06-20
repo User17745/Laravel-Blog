@@ -9,5 +9,8 @@
             <a class="nav-item nav-link" href="/services">Service</a>
             <a class="nav-item nav-link" href="/about">About</a>
         </div>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="/posts/create" class="nav-item nav-link">Create Post</a></li>
+        </ul>
     {{-- </div> --}}
 </nav>
