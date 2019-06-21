@@ -15,6 +15,6 @@
                 {{Form::label('body', 'Body')}}
                 {{Form::textarea('body', '', ['id' => 'article-ckeditor', 'class' => 'form-control', 'style' => 'height: 100px;'])}}
         </div>
-        {{Form::submit('Submit', ['class' => 'btn btn-primary'])}}
+        {{Form::submit('Submit', ['class' => 'btn btn-default'])}}
     {{ Form::close() }}
 @endsection

@@ -59,7 +59,6 @@ html, body {
 .navbar{
     background: linear-gradient(90deg, #e91e63, #ffcc80);
 }
-
 .navbar-light .navbar-nav .nav-link{
     color: rgba(255,255,255,.8);
     padding: 0 25px;
@@ -71,11 +70,20 @@ html, body {
 .navbar-light .navbar-nav .show > .nav-link, .navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .nav-link.active{
     color: rgba(255,255,255,1);
 }
+.navbar-toggler{
+    border: none;
+    margin: auto;
+}
+.navbar-light .navbar-toggler:focus{
+    outline: none;
+}
 
 @media (max-width: 992px){
     .navbar-light .navbar-nav .nav-link{
         color: rgba(255,255,255,.8);
         padding: 10px 25px;
+        width: 100%;
+        text-align: center;
     }        
 }
 
@@ -117,3 +125,51 @@ html, body {
 #cke_1_contents{
     height: 30px !important;
 }
+
+.btn {
+    background: #fff;
+    border-radius: 15px;
+}
+.btn-default{
+    color: #424242;
+    border-color: #ddd;
+}
+
+#post-options{
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+}
+#post-options .btn{
+    border: none;
+    margin: 2px;
+}
+#post-options .btn-danger{
+    color: #e91e63;
+    background: #fff;
+}
+#post-options .btn-default{
+    color: #424242;
+}
+
+//---------- Custom Scrollbar ----------//
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+  //---------- Custom Scrollbar ----------//
