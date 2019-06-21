@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="title m-b-md">
+    <div class="title">
         {{$title}}
     </div>
     <p>This is a Larvel application that Brad is helping me build.</p>

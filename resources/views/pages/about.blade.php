@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="title m-b-md">
+    <div class="title">
         <?php echo $title; ?>
     </div>
     <p>This is my about page.</p>

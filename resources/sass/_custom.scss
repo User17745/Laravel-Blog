@@ -6,6 +6,14 @@ html, body {
     margin: 0;
 }
 
+.container{
+    border-width: 2px;
+    border-color: #eee;
+    border-style: solid;
+    border-radius: 25px;
+    margin-top: 2em;
+}
+
 .custom-height {
     height: 85vh;
 }
@@ -75,9 +83,37 @@ html, body {
     background-color: #ffcc80;
     border-color: #ffcc80;
 }
-.page-link {
+.page-link{
     color: #ffcc80;
 }
 .page-link:focus{
     box-shadow: 0 0 0 0.2rem #ffcc8055;
+}
+
+#messages{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    z-index: 100 !important;
+}
+.alert{
+    width: 170px;
+    background: #fff;
+    border: none;
+    border-radius: 10px;
+    margin: 25px 10px;
+    box-shadow: 0 10px 20px 0 rgba(0,0,0,0.1);
+}
+.alert-danger{
+    box-shadow: 0 10px 20px 0 rgba(255,0,0,0.1);
+}
+.alert-success{
+    box-shadow: 0 10px 20px 0 rgba(0,255,0,0.1);
+}
+.close:focus{
+    outline: none;
+}
+
+#cke_1_contents{
+    height: 30px !important;
 }

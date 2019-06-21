@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="title m-b-md">
+    <div class="title">
         {{$post->title}}
     </div>
     <p>{!!$post->body!!}</p>

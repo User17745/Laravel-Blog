@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="title m-b-md">
+    <div class="title">
         Posts
     </div>
     @if(count($posts) > 0)
