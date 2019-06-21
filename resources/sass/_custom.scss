@@ -152,6 +152,16 @@ html, body {
     color: #424242;
 }
 
+#back{
+    position: absolute;
+    top: 30px;
+    left: 30px;
+}
+.back{
+    border-radius: 25px;
+    line-height: 29px !important;
+    padding-right: 5px;
+}
 //---------- Custom Scrollbar ----------//
 /* width */
 ::-webkit-scrollbar {
