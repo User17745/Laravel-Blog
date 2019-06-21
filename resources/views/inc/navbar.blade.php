@@ -11,6 +11,34 @@
         </div>
         <ul class="nav navbar-nav navbar-right">
             <li><a href="/posts/create" class="nav-item nav-link">Create Post</a></li>
+            <!-- Authentication Links -->
+            @guest
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+            </li>
+            @if (Route::has('register'))
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                </li>
+            @endif
+        @else
+            <li>
+                <a href="#" class="nav-item nav-link">
+                    {{ Auth::user()->name }} <span class="caret"></span>
+                </a>
+            </li>
+
+            <li>
+                <a href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();" class="nav-item nav-link">
+                    {{ __('Logout') }}
+                </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                </form>
+            </li>
+        @endguest
         </ul>
     </div>
 </nav>

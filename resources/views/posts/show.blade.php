@@ -15,11 +15,11 @@
     <small>Written on <strong>{{$post->created_at}}</strong></small>
     <br>
     <div id="post-options">
-        <a href="/posts/{{$post->id}}/edit" class="btn btn-default">Edit</a>
+        <a href="/posts/{{$post->id}}/edit" class="material-icons btn btn-default">edit</a>
 
         {{Form::open(['action' => ['PostsController@destroy', $post->id], 'method' => 'POST', 'class' => 'pull_right'])}}
             {{Form::hidden('_method', 'DELETE')}}
-            {{Form::submit('Delete', ['class' => 'btn btn-danger'])}}
+            {{Form::submit('delete', ['class' => 'material-icons btn btn-danger'])}}
         {{Form::close()}}
     </div>
 

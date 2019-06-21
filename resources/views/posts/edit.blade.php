@@ -22,6 +22,6 @@
                 {{Form::textarea('body', $post->body, ['id' => 'article-ckeditor', 'class' => 'form-control', 'style' => 'height: 100px;'])}}
         </div>
         {{Form::hidden('_method', 'PUT')}}
-        {{Form::submit('Submit', ['class' => 'btn btn-default'])}}
+        {{Form::submit('Submit', ['class' => 'btn btn-default btn-form'])}}
     {{ Form::close() }}
 @endsection

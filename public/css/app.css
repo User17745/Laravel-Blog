@@ -11137,7 +11137,7 @@ body {
   margin: 0;
 }
 
-.container {
+.outer-container {
   border-width: 2px;
   border-color: #eee;
   border-style: solid;
@@ -11276,6 +11276,7 @@ body {
 .btn {
   background: #fff;
   border-radius: 15px;
+  font-size: 1.5rem;
 }
 
 .btn-default {
@@ -11301,6 +11302,10 @@ body {
 
 #post-options .btn-default {
   color: #424242;
+}
+
+.btn-form {
+  font-size: 1rem;
 }
 
 #back {
