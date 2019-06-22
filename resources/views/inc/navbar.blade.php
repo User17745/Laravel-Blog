@@ -23,7 +23,7 @@
             @endif
         @else
             <li>
-                <a href="#" class="nav-item nav-link">
+                <a href="/dashboard" class="nav-item nav-link">
                     {{ Auth::user()->name }} <span class="caret"></span>
                 </a>
             </li>
