@@ -10,7 +10,6 @@
             <a class="nav-item nav-link" href="/about">About</a>
         </div>
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="/posts/create" class="nav-item nav-link">Create Post</a></li>
             <!-- Authentication Links -->
             @guest
             <li class="nav-item">
@@ -22,12 +21,8 @@
                 </li>
             @endif
         @else
-            <li>
-                <a href="/dashboard" class="nav-item nav-link">
-                    {{ Auth::user()->name }} <span class="caret"></span>
-                </a>
-            </li>
-
+            <li><a href="/posts/create" class="nav-item nav-link">Create Post</a></li>
+            <li><a href="/dashboard" class="nav-item nav-link">{{ Auth::user()->name }} <span class="caret"></span></a></li>
             <li>
                 <a href="{{ route('logout') }}"
                     onclick="event.preventDefault();

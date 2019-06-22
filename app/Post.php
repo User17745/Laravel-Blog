@@ -13,4 +13,8 @@ class Post extends Model
     //Timestamps (Opional) (true by default)
     public $timestamps = true;
 
+    function user(){
+        return $this->belongsTo('App\User');
+    }
+
 }

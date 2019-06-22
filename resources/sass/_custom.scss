@@ -130,7 +130,7 @@ html, body {
     background: #fff;
     color: #424242;
     border-radius: 15px;
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 .btn-default{
     color: #424242;
@@ -145,6 +145,7 @@ html, body {
 #post-options .btn{
     border: none;
     margin: 2px;
+    font-size: 1.5rem;
 }
 #post-options .btn-danger{
     color: #e91e63;
@@ -152,10 +153,6 @@ html, body {
 }
 #post-options .btn-default{
     color: #424242;
-}
-
-.btn-form{
-    font-size: 1rem;
 }
 
 #back{
@@ -167,6 +164,7 @@ html, body {
     border-radius: 25px;
     line-height: 29px !important;
     padding-right: 5px;
+    font-size: 1.5rem;
 }
 //---------- Custom Scrollbar ----------//
 /* width */

@@ -12,15 +12,20 @@
     </div>
     <p>{!!$post->body!!}</p>
     <hr style="margin-bottom: 0px;">
-    <small>Written on <strong>{{$post->created_at}}</strong></small>
+    <small>Written on <strong>{{$post->created_at}}</strong> by <strong>{{$post->user->name}}</strong></small>
     <br>
-    <div id="post-options">
-        <a href="/posts/{{$post->id}}/edit" class="material-icons btn btn-default">edit</a>
+    
+    @if(!Auth::guest()) {{-- Hide for guest users --}}
+        @if(Auth::user()->id == $post->user_id) {{-- Hide for users other than the author --}}
+            <div id="post-options">
+                <a href="/posts/{{$post->id}}/edit" class="material-icons btn btn-default">edit</a>
 
-        {{Form::open(['action' => ['PostsController@destroy', $post->id], 'method' => 'POST', 'class' => 'pull_right'])}}
-            {{Form::hidden('_method', 'DELETE')}}
-            {{Form::submit('delete', ['class' => 'material-icons btn btn-danger'])}}
-        {{Form::close()}}
-    </div>
+                {{Form::open(['action' => ['PostsController@destroy', $post->id], 'method' => 'POST', 'class' => 'pull_right'])}}
+                    {{Form::hidden('_method', 'DELETE')}}
+                    {{Form::submit('delete', ['class' => 'material-icons btn btn-danger'])}}
+                {{Form::close()}}
+            </div>
+        @endif
+    @endif
 
 @endsection

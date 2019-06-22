@@ -11277,7 +11277,7 @@ body {
   background: #fff;
   color: #424242;
   border-radius: 15px;
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
 .btn-default {
@@ -11294,6 +11294,7 @@ body {
 #post-options .btn {
   border: none;
   margin: 2px;
+  font-size: 1.5rem;
 }
 
 #post-options .btn-danger {
@@ -11303,10 +11304,6 @@ body {
 
 #post-options .btn-default {
   color: #424242;
-}
-
-.btn-form {
-  font-size: 1rem;
 }
 
 #back {
@@ -11319,6 +11316,7 @@ body {
   border-radius: 25px;
   line-height: 29px !important;
   padding-right: 5px;
+  font-size: 1.5rem;
 }
 
 /* width */

@@ -8,6 +8,16 @@ use App\Post; //To bring in Post Model (App is the namespace of Posts Model)
 class PostsController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth', ['except' => ['index', 'show']]);
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -74,7 +84,11 @@ class PostsController extends Controller
     public function edit($id)
     {
         $post = Post::find($id);
-        return view('posts.edit')->with('post', $post);
+
+        if(auth()->user()->id == $post->user_id) //Disable editing for users other than the author
+            return view('posts.edit')->with('post', $post);
+        else
+            return redirect('/posts')->with('error', 'Unauthorized atempt to edit!');
     }
 
     /**
@@ -111,7 +125,10 @@ class PostsController extends Controller
     {
         $post = Post::find($id);
         $post->delete();
-
-        return redirect('/posts')->with('success', 'Post Deleted!');
+        
+        if(auth()->user()->id == $post->user_id) //Disable deleting for users other than the author
+            return redirect('/posts')->with('success', 'Post Deleted!');
+        else
+            return redirect('/posts')->with('error', 'Unauthorized atempt to delete!');
     }
 }
