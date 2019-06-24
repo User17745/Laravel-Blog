@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\Post; //To bring in Post Model (App is the namespace of Posts Model)
 
 class PostsController extends Controller
@@ -67,7 +68,7 @@ class PostsController extends Controller
             //Upload Image
             $path = $request->file('cover_img')->storeAs('public/cover_imgs', $fileNameToStore);
         }else{
-            $fileNameToStore = 'default_cover.jpg';
+            $fileNameToStore = 'default_cover.png';
         }
 
         //Creating the new post
@@ -124,10 +125,27 @@ class PostsController extends Controller
             'body' => 'required'
         ]);
 
-        //Creating the new post
+         //Handel Cover Image File
+         if($request->hasFile('cover_img')){
+            //Get file name with extension
+            $fileNameWithExtn = $request->file('cover_img')->getClientOriginalName();
+            //Get just file name
+            $fileName = pathinfo($fileNameWithExtn, PATHINFO_FILENAME);
+            //Get just file extenstion
+            $fileExtn = $request->file('cover_img')->getClientOriginalExtension();
+            //File name to store
+            $fileNameToStore = $fileName . '_' . time() . '.' . $fileExtn;
+            //Upload Image
+            $path = $request->file('cover_img')->storeAs('public/cover_imgs', $fileNameToStore);
+        }
+
+        //Updating the post
         $post = Post::find($id);
         $post->title = $request->input('title');
         $post->body = $request->input('body');
+        if($request->hasFile('cover_img')){
+            $post->cover_img = $fileNameToStore;
+        }
         $post->save();
 
         return redirect("/posts/{$post->id}")->with('success', 'Post Updated!');
@@ -142,11 +160,16 @@ class PostsController extends Controller
     public function destroy($id)
     {
         $post = Post::find($id);
-        $post->delete();
         
-        if(auth()->user()->id == $post->user_id) //Disable deleting for users other than the author
-            return redirect('/posts')->with('success', 'Post Deleted!');
-        else
+        if(auth()->user()->id != $post->user_id) //Disable deleting for users other than the author
             return redirect('/posts')->with('error', 'Unauthorized atempt to delete!');
+        
+        if($post->cover_img != 'default_cover.png'){
+            //Deleting post's cover image
+            Storage::delete('public/cover_imgs/'.$post->cover_img);
+        }
+
+        $post->delete();
+        return redirect('/posts')->with('success', 'Post Deleted!');
     }
 }

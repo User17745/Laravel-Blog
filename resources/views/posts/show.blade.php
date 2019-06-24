@@ -33,15 +33,16 @@
                         <p>Are you sure you want to delete this post?</p>
                     </div>
                     <div id="delete-confirmation-options">
-                        <a id="delete-confirmation-delete" onClick="deletePostConfirm()" class="btn btn-default" style="cursor: pointer; border: none; font-size: 13px; color: #e91e63;">
-                            {{Form::open(['action' => ['PostsController@destroy', $post->id], 'method' => 'POST', 'class' => 'pull_right'])}}
-                                {{Form::hidden('_method', 'DELETE')}}
-                                {{Form::submit('DELETE', ['class' => 'btn btn-default', 'style' => 'cursor: pointer; border: none; font-size: 13px; color: #e91e63;'])}}
-                            {{Form::close()}}
-                        </a>
-                        <a id="delete-confirmation-cancel" onClick="deletePostConfirm()" class="btn btn-default" style="cursor: pointer; border: none; font-size: 13px;">
+                        
+                        {{Form::open(['action' => ['PostsController@destroy', $post->id], 'method' => 'POST', 'class' => 'pull_right'])}}
+                            {{Form::hidden('_method', 'DELETE')}}
+                            {{Form::submit('DELETE', ['id' => 'delete-confirmation-delete', 'class' => 'btn btn-danger', 'onClick' => 'deletePostConfirm()', 'style' => 'cursor: pointer; border: none; font-size: 13px; color: #e91e63; float: right;'])}}
+                        {{Form::close()}}
+                        
+                        <a id="delete-confirmation-cancel" onClick="deletePostConfirm()" class="btn btn-default" style="cursor: pointer; border: none; font-size: 13px; float: right;">
                             CANCEL
                         </a>
+                        <div class="clear-fix" style="clear: both;"></div>
                     </div>
                 </div>
             </div>
