@@ -12,7 +12,7 @@
     </div>
     <p>Let your words be heard!</p>
 
-    {{ Form::open(['action' => 'PostsController@store', 'method' => 'POST']) }}
+    {{ Form::open(['action' => 'PostsController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data']) }}
         <div class="form-group">
             {{Form::label('title', 'Title')}}
             {{Form::text('title', '', ['class' => 'form-control'])}}
@@ -21,6 +21,7 @@
                 {{Form::label('body', 'Body')}}
                 {{Form::textarea('body', '', ['id' => 'article-ckeditor', 'class' => 'form-control', 'style' => 'height: 100px;'])}}
         </div>
+        {{Form::file('cover_img')}}
         {{Form::submit('Submit', ['class' => 'btn btn-default btn-form'])}}
     {{ Form::close() }}
 @endsection

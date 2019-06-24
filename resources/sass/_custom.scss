@@ -36,10 +36,15 @@ html, body {
 
 .content {
     text-align: center;
+    width: 100%;
 }
 
 .title {
     font-size: 84px;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+    text-shadow: 3px 2px 9px rgba(255,255,255,0.5);
 }
 
 .links > a {
@@ -137,22 +142,40 @@ html, body {
     border-color: #ddd;
 }
 
-#post-options{
+#post-controls{
     position: absolute;
     bottom: 30px;
     right: 30px;
 }
-#post-options .btn{
+#post-controls .btn{
     border: none;
     margin: 2px;
     font-size: 1.5rem;
 }
-#post-options .btn-danger{
+#post-controls .btn-danger{
     color: #e91e63;
     background: #fff;
 }
-#post-options .btn-default{
+#post-controls .btn-default{
     color: #424242;
+}
+
+#post-options{
+
+}
+
+#delete-confirmation{
+    display: none;
+    width: 300px;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+#delete-confirmation-message{
+
+}
+#delete-confirmation-options{
+    text-align: right;
 }
 
 #back{
@@ -166,6 +189,25 @@ html, body {
     padding-right: 5px;
     font-size: 1.5rem;
 }
+
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+
 //---------- Custom Scrollbar ----------//
 /* width */
 ::-webkit-scrollbar {
